@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Public+Sans:wght@400;600;700&display=swap');
+
+/* Setup font varibles in storybook, this is the most simpler solution that I've found to have these fonts in storybook 
+* until the issue is solved, is very important to keep in sync these fonts with the nextjs fonts 
+* https://github.com/storybookjs/storybook/discussions/24055
+* */
+:root {
+  --font-sans: 'Public Sans', sans-serif;
+  --font-helvetica: 'PT Sans', sans-serif;
+}
