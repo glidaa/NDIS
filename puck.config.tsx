@@ -38,7 +38,7 @@ type Props = {
   MastHead: {};
   Button: ButtonProps;
   Separator: SeparatorProps;
-  CardNDIS: { title: string, text: string }
+  CardNDIS: { title: string, text: string, variant: 'major' | 'minor' }
 };
 export type UserConfig = Config<
   Props,
@@ -72,11 +72,19 @@ export const conf: UserConfig = {
       render: (props) => <CardNDIS {...props} />,
       fields: {
         title: { type: "text" },
-        text: { type: "text" }
+        text: { type: "text" },
+        variant: {
+          type: "radio",
+          options: [
+            { value: "major", label: "major" },
+            { value: "minor", label: "minor" }
+          ]
+        }
       },
       defaultProps: {
         title: "Active kids",
-        text: "$100 voucher for children's sport, fitness and recreation."
+        text: "$100 voucher for children's sport, fitness and recreation.",
+        variant: "major"
       }
     },
 
