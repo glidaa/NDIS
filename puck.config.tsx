@@ -25,7 +25,8 @@ import {
   SwitchButton,
   SwitchButtonProps,
 } from "app/components/ui/switch-button";
-import CardNDIS from "app/components/ui/cardndis.tsx/cardndis";
+import { CardNDIS, ICardNDIS } from "app/components/ui/cardNDIS";
+import { CardNDISWithDate, ICardNDISWithDate } from "app/components/ui/cardNDISWithDate";
 
 type Props = {
   Card: CardProps;
@@ -38,8 +39,10 @@ type Props = {
   MastHead: {};
   Button: ButtonProps;
   Separator: SeparatorProps;
-  CardNDIS: { title: string, text: string, variant: 'major' | 'minor' }
+  CardNDIS: ICardNDIS,
+  CardNDISWithDate: ICardNDISWithDate,
 };
+
 export type UserConfig = Config<
   Props,
   RootProps,
@@ -82,6 +85,30 @@ export const conf: UserConfig = {
         }
       },
       defaultProps: {
+        title: "Active kids",
+        text: "$100 voucher for children's sport, fitness and recreation.",
+        variant: "major"
+      }
+    },
+
+    CardNDISWithDate: {
+      render: (props) => <CardNDISWithDate {...props} />,
+      fields: {
+        category: { type: "text" },
+        date: { type: "text" },
+        title: { type: "text" },
+        text: { type: "text" },
+        variant: {
+          type: "radio",
+          options: [
+            { value: "major", label: "major" },
+            { value: "minor", label: "minor" }
+          ]
+        }
+      },
+      defaultProps: {
+        category: "Family",
+        date: "2 Sep 2020",
         title: "Active kids",
         text: "$100 voucher for children's sport, fitness and recreation.",
         variant: "major"

@@ -27,4 +27,4 @@ const CardNDIS = ({ title, text, variant }: ICardNDIS) => {
   )
 }
 
-export default CardNDIS
+export { CardNDIS, ICardNDIS }
