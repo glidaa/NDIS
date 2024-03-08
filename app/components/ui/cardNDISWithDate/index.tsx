@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardContent, Typography, CardActions, Button, Box, Card } from "@mui/material"
-import { RightArrowIcon } from 'app/components/icons/right-arrow-icon'
+import { RightArrowIconBlue } from 'app/components/icons/right-arrow-icon/blue'
 
 interface ICardNDISWithDate {
   category: string,
@@ -29,7 +29,7 @@ const CardNDISWithDate = ({ category, date, title, text, variant }: ICardNDISWit
         </Typography>
       </CardContent>
       <CardActions sx={{ padding: variant === 'major' ? '32px' : '16px', paddingBottom: '16px' }}>
-        <Button size="large" startIcon={<RightArrowIcon />} />
+        <Button size="large" startIcon={<RightArrowIconBlue />} />
       </CardActions>
     </Card>
   )

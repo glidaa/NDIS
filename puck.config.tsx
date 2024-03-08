@@ -27,6 +27,7 @@ import {
 } from "app/components/ui/switch-button";
 import { CardNDIS, ICardNDIS } from "app/components/ui/cardNDIS";
 import { CardNDISWithDate, ICardNDISWithDate } from "app/components/ui/cardNDISWithDate";
+import { CardNDISBasic, ICardNDISBasic } from "app/components/ui/cardNDISBasic";
 
 type Props = {
   Card: CardProps;
@@ -40,6 +41,7 @@ type Props = {
   Button: ButtonProps;
   Separator: SeparatorProps;
   CardNDIS: ICardNDIS,
+  CardNDISBASIC: ICardNDISBasic,
   CardNDISWithDate: ICardNDISWithDate,
 };
 
@@ -88,6 +90,24 @@ export const conf: UserConfig = {
         title: "Active kids",
         text: "$100 voucher for children's sport, fitness and recreation.",
         variant: "major"
+      }
+    },
+
+    CardNDISBasic: {
+      render: (props) => <CardNDISBasic {...props} />,
+      fields: {
+        title: { type: "text" },
+        variant: {
+          type: "radio",
+          options: [
+            { value: "outlined", label: "Outlined" },
+            { value: "blue", label: "Blue" }
+          ]
+        }
+      },
+      defaultProps: {
+        title: "Active kids",
+        variant: "outlined"
       }
     },
 
