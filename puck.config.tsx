@@ -25,6 +25,7 @@ import {
   SwitchButton,
   SwitchButtonProps,
 } from "app/components/ui/switch-button";
+import CardNDIS from "app/components/ui/cardndis.tsx/cardndis";
 
 type Props = {
   Card: CardProps;
@@ -37,6 +38,7 @@ type Props = {
   MastHead: {};
   Button: ButtonProps;
   Separator: SeparatorProps;
+  CardNDIS: { title: string, text: string }
 };
 export type UserConfig = Config<
   Props,
@@ -66,6 +68,17 @@ export const conf: UserConfig = {
     Flex,
     Text,
     VerticalSpace,
+    CardNDIS: {
+      render: (props) => <CardNDIS {...props} />,
+      fields: {
+        title: { type: "text" },
+        text: { type: "text" }
+      },
+      defaultProps: {
+        title: "Active kids",
+        text: "$100 voucher for children's sport, fitness and recreation."
+      }
+    },
 
     MastHead: {
       render: () => <MastHead />,
