@@ -1,7 +1,6 @@
 import React from 'react'
-import { CardContent, Typography, CardActions, Button, Box, Card } from "@mui/material"
+import { CardContent, Typography, CardActions, Button, Box, Card, IconButton } from "@mui/material"
 import { RightArrowIconBlue } from 'app/components/icons/right-arrow-icon/blue'
-import { IconButton } from '@measured/puck'
 import { RightArrowIconWhite } from 'app/components/icons/right-arrow-icon/white'
 
 export interface ICardNDISBasic {
@@ -27,7 +26,7 @@ const CardNDISBasic = ({ title, variant }: ICardNDISBasic) => {
         </Typography>
       </CardContent>
       <CardActions sx={{ padding: '16px', paddingBottom: '16px' }}>
-        <IconButton title="right arrow">
+        <IconButton>
           {
             variant === 'outlined' ? (
               <RightArrowIconBlue />

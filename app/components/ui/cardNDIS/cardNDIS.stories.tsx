@@ -14,6 +14,6 @@ export const Default: Story = {
   args: {
     title: 'Active kids',
     text: '$100 voucher for children\'s sport, fitness and recreation.',
-    variant: 'major'
-  },
+    variant: 'minor'
+  }
 };
