@@ -82,7 +82,9 @@ export const conf: UserConfig = {
           type: "radio",
           options: [
             { value: "major", label: "major" },
-            { value: "minor", label: "minor" }
+            { value: "minor", label: "minor" },
+            { value: "outlined", label: "Outlined" },
+            { value: "blue", label: "Blue" }
           ]
         }
       },
