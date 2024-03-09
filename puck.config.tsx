@@ -28,6 +28,7 @@ import {
 import { CardNDIS, ICardNDIS } from "app/components/ui/cardNDIS";
 import { CardNDISWithDate, ICardNDISWithDate } from "app/components/ui/cardNDISWithDate";
 import { CardNDISBasic, ICardNDISBasic } from "app/components/ui/cardNDISBasic";
+import { ButtonNDIS, IButtonNDIS } from "app/components/ui/buttonNDIS";
 
 type Props = {
   Card: CardProps;
@@ -43,6 +44,7 @@ type Props = {
   CardNDIS: ICardNDIS,
   CardNDISBASIC: ICardNDISBasic,
   CardNDISWithDate: ICardNDISWithDate,
+  ButtonNDIS: IButtonNDIS
 };
 
 export type UserConfig = Config<
@@ -136,6 +138,30 @@ export const conf: UserConfig = {
         title: "Active kids",
         text: "$100 voucher for children's sport, fitness and recreation.",
         variant: "major"
+      }
+    },
+
+    ButtonNDIS: {
+      render: (props) => <ButtonNDIS {...props} />,
+      fields: {
+        label: { type: "text" },
+        variant: {
+          type: "radio",
+          options: [
+            { value: "outlined", label: "Outlined" },
+            { value: "blue", label: "Blue" },
+            { value: "outlined-disabled", label: "Outlined disabled" },
+            { value: "blue-disabled", label: "Blue disabled" },
+            { value: "outlined-with-icon", label: "Outlined with icon" },
+            { value: "blue-with-icon", label: "Blue with icon" },
+            { value: "outlined-with-icon-disabled", label: "Outlined with icon disabled" },
+            { value: "blue-with-icon-disabled", label: "Blue with icon disabled" }
+          ]
+        }
+      },
+      defaultProps: {
+        label: "Button",
+        variant: "blue"
       }
     },
 
