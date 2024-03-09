@@ -10,17 +10,14 @@ interface ICardNDIS {
 }
 
 const CardNDIS = ({ title, text, variant }: ICardNDIS) => {
-  const variantsConditions = {
-    text: (variant === 'blue' ? '#FFFFFF' : '#056FD9'),
-    arrowIcon: (variant === 'blue' ? <RightArrowIconWhite /> : <RightArrowIconBlue />),
-    backgroundColor: (variant === 'blue' ? '#056FD9' : '#FFFFFF'),
-    color: (variant === 'blue' ? '#FFFFFF' : '#000000'),
-    renderOrangeBox: (variant === 'major' || variant === 'minor' ? true : false)
-  }
+  const color = (variant === 'blue' ? '#FFFFFF' : '#000000')
+  const arrowIcon = (variant === 'blue' ? <RightArrowIconWhite /> : <RightArrowIconBlue />)
+  const backgroundColor = (variant === 'blue' ? '#056FD9' : '#FFFFFF')
+  const renderOrangeBox = (variant === 'major' || variant === 'minor' ? true : false)
 
   return (
-    <Card sx={{ width: variant === 'major' ? '368px' : '343px', backgroundColor: variantsConditions.backgroundColor, border: '1px solid #CDD3D6', color: variantsConditions.color }}>
-      {variantsConditions.renderOrangeBox && <Box sx={{ width: '100%', height: '4px', backgroundColor: '#E3B505' }} />}
+    <Card sx={{ width: variant === 'major' ? '368px' : '343px', backgroundColor: backgroundColor, border: '1px solid #CDD3D6', color: color }}>
+      {renderOrangeBox && <Box sx={{ width: '100%', height: '4px', backgroundColor: '#E3B505' }} />}
       <CardContent sx={{ padding: variant === 'major' ? '32px 32px 16px 32px' : '16px 16px 8px 16px' }}>
         <Typography sx={{ fontSize: 20, fontWeight: 600, marginBottom: '16px' }}>
           {title}
@@ -31,7 +28,7 @@ const CardNDIS = ({ title, text, variant }: ICardNDIS) => {
       </CardContent>
       <CardActions sx={{ padding: variant === 'major' ? '32px' : '16px', paddingBottom: '16px' }}>
         <IconButton>
-          {variantsConditions.arrowIcon}
+          {arrowIcon}
         </IconButton>
       </CardActions>
     </Card>
