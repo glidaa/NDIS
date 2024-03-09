@@ -1,3 +1,4 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter'
 import { DefaultRootProps } from "@measured/puck";
 import { ReactNode } from "react";
 import { Footer } from "./footer";
@@ -10,9 +11,11 @@ export type RootProps = {
 function Root({ children, editMode }: RootProps) {
   return (
     <>
-      <MastHead />
-      {children}
-      <Footer />
+      <AppRouterCacheProvider>
+        <MastHead />
+        {children}
+        <Footer />
+      </AppRouterCacheProvider>
     </>
   );
 }
