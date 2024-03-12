@@ -9,7 +9,7 @@ export const UploadIcon = (props: SVGProps<SVGSVGElement>) => (
     fill="none"
     {...props}
   >
-    <path d="M0 17H14V15H0V17ZM0 7H4V13H10V7H14L7 0L0 7Z" fill={props?.color || '#FFFFFF'} opacity={props?.opacity || null}/>
+    <path d="M0 17H14V15H0V17ZM0 7H4V13H10V7H14L7 0L0 7Z" fill={props?.color || '#FFFFFF'} />
   </svg>  
 );
 ''
