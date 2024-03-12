@@ -1,5 +1,6 @@
 import * as React from "react";
 import { SVGProps } from "react";
+
 export const UploadIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +9,7 @@ export const UploadIcon = (props: SVGProps<SVGSVGElement>) => (
     fill="none"
     {...props}
   >
-    <path fill="#fff" d="M0 17h14v-2H0v2ZM0 7h4v6h6V7h4L7 0 0 7Z" />
-  </svg>
+    <path d="M0 17H14V15H0V17ZM0 7H4V13H10V7H14L7 0L0 7Z" fill={props?.color || '#FFFFFF'} opacity={props?.opacity || null}/>
+  </svg>  
 );
+''

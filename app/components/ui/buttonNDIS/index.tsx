@@ -1,4 +1,5 @@
-import { Button } from '@mui/material'
+import { Button, IconButton } from '@mui/material'
+import { UploadIcon } from 'app/components/icons/upload-icon'
 import React from 'react'
 
 interface IButtonNDIS {
@@ -8,10 +9,11 @@ interface IButtonNDIS {
 
 const ButtonNDIS = ({ variant, label }) => {
   const color = /blue/.test(variant) ? 'contained' : 'outlined'
-  console.log("🚀 ~ ButtonNDIS ~ color:", color)
+  const disabled = !!/disabled/.test(variant)
+  const startIcon = /blue/.test(variant) ? <UploadIcon opacity={disabled ? '50%' : null} /> : <UploadIcon color={'#056FD9'} opacity={disabled ? '50%' : null} />
 
   return (
-    <Button variant="contained" sx={{ width: '101px'}}>
+    <Button startIcon={startIcon} disabled={disabled} variant={color} sx={{ width: '101px', height: '48px', paddingX: '24px' }}>
       {label}
     </Button>
   )
