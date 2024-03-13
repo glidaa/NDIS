@@ -29,6 +29,7 @@ import { CardNDIS, ICardNDIS } from "app/components/ui/cardNDIS";
 import { CardNDISWithDate, ICardNDISWithDate } from "app/components/ui/cardNDISWithDate";
 import { CardNDISBasic, ICardNDISBasic } from "app/components/ui/cardNDISBasic";
 import { ButtonNDIS, IButtonNDIS } from "app/components/ui/buttonNDIS";
+import { AccordionNDIS, IAccordionNDIS } from "app/components/ui/accordionNDIS";
 
 type Props = {
   Card: CardProps;
@@ -45,6 +46,7 @@ type Props = {
   CardNDISBASIC: ICardNDISBasic,
   CardNDISWithDate: ICardNDISWithDate,
   ButtonNDIS: IButtonNDIS
+  AccordionNDIS: IAccordionNDIS
 };
 
 export type UserConfig = Config<
@@ -162,6 +164,27 @@ export const conf: UserConfig = {
       defaultProps: {
         label: "Button",
         variant: "blue"
+      }
+    },
+
+    AccordionNDIS: {
+      render: (props) => <AccordionNDIS {...props} />,
+      fields: {
+        title: { type: "text" },
+        text: { type: "text" },
+        size: {
+          type: "radio",
+          options: [
+            { value: "full", label: "full" },
+            { value: "xl", label: "xl" },
+            { value: "sm", label: "sm" },
+          ]
+        }
+      },
+      defaultProps: {
+        title: "Writing for inclusivity",
+        text: "Australia is one of the most culturally diverse countries in the world so it's important to write for people from all backgrounds.",
+        size: 'full'
       }
     },
 
