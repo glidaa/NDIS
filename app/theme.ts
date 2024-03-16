@@ -1,12 +1,13 @@
 'use client';
-import { Roboto } from 'next/font/google';
 import { createTheme } from '@mui/material/styles';
+import { roboto } from './assets/fonts/roboto';
 
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
+declare module '@mui/material/Button/Button' {
+  interface ButtonPropsVariantOverrides {
+    'ndis',
+    'ndis-outlined'
+  }
+}
 
 const theme = createTheme({
   typography: {
