@@ -1,0 +1,26 @@
+version: 0.1  # Specify the buildspec version
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - yarn install
+
+  pre_build:
+    commands:
+      - echo "Running pre-build scripts..."
+      - # Add any custom pre-build commands here (optional)
+
+  build:
+    commands:
+      - echo "Building Next.js app..."
+      - yarn build
+
+  post_build:
+    commands:
+      - echo "Performing post-build actions..."
+      - # Add any post-build commands here (optional)
+
+artifacts:
+  files:
+    - '**/*'  # Include all files in the build output directory
