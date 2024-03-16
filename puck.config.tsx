@@ -9,7 +9,7 @@ import {
   VerticalSpaceProps,
 } from "./app/components/blocks/VerticalSpace";
 
-import Root, { RootProps } from "./app/components/layout/root-layout";
+import { Root, RootProps } from "./app/components/layout/root-layout";
 import { Separator, SeparatorProps } from "app/components/ui/separator";
 import { Input, InputProps } from "app/components/ui/input";
 import {
