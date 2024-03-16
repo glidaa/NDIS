@@ -7,7 +7,7 @@ import { BottomArrowIcon } from 'app/components/icons/bottom-arrow-icon';
 interface IAccordionNDIS {
   title: string,
   text: string,
-  size: string
+  size: 'full' | 'xl' | 'sm'
 }
 
 const AccordionNDIS = ({ title, text, size }: IAccordionNDIS) => {

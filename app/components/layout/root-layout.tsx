@@ -22,4 +22,12 @@ function Root({ children, editMode }: RootProps) {
   );
 }
 
-export default Root;
+const decorators = [
+  (Story) => (
+    <ThemeProvider theme={theme}>
+      {Story()}
+    </ThemeProvider>
+  )
+];
+
+export { Root, decorators }
