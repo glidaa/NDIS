@@ -30,6 +30,7 @@ import { CardNDISWithDate, ICardNDISWithDate } from "app/components/ui/cardNDISW
 import { CardNDISBasic, ICardNDISBasic } from "app/components/ui/cardNDISBasic";
 import { ButtonNDIS, IButtonNDIS } from "app/components/ui/buttonNDIS";
 import { AccordionNDIS, IAccordionNDIS } from "app/components/ui/accordionNDIS";
+import { HeroBannerNDIS, IHeroBannerNDIS } from "app/components/ui/heroBannerNDIS";
 
 type Props = {
   Card: CardProps;
@@ -47,6 +48,7 @@ type Props = {
   CardNDISWithDate: ICardNDISWithDate,
   ButtonNDIS: IButtonNDIS
   AccordionNDIS: IAccordionNDIS
+  HeroBannerNDIS: IHeroBannerNDIS
 };
 
 export type UserConfig = Config<
@@ -185,6 +187,28 @@ export const conf: UserConfig = {
         title: "Writing for inclusivity",
         text: "Australia is one of the most culturally diverse countries in the world so it's important to write for people from all backgrounds.",
         size: 'full'
+      }
+    },
+
+    HeroBannerNDIS: {
+      render: (props) => <HeroBannerNDIS {...props} />,
+      fields: {
+        title: { type: "text" },
+        text: { type: "text" },
+        buttonText: { type: "text" },
+        variant: {
+          type: "radio",
+          options: [
+            { value: "white", label: "White" },
+            { value: "blue", label: "Blue" },
+          ]
+        }
+      },
+      defaultProps: {
+        title: "Helping you deliver great government services",
+        text: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance",
+        buttonText: "View Digital Service Toolkit",
+        variant: "white"
       }
     },
 

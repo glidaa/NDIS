@@ -5,7 +5,8 @@ import { roboto } from './assets/fonts/roboto';
 declare module '@mui/material/Button/Button' {
   interface ButtonPropsVariantOverrides {
     'ndis',
-    'ndis-outlined'
+    'ndis-outlined',
+    'black'
   }
 }
 
@@ -43,6 +44,21 @@ const theme = createTheme({
               opacity: '80%',
               color: '#056FD9'
             }
+          }
+        },
+        {
+          props: { variant: 'black' },
+          style: {
+            color: '#22272B',
+            backgroundColor: '#FFFFFF',
+            fontWeight: 600,
+            ":disabled": {
+              opacity: '80%',
+              color: '#22272B'
+            },
+            ":hover": {
+              backgroundColor: '#FFFFFF'
+            },
           }
         }
       ]
