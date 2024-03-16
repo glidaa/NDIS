@@ -31,6 +31,7 @@ import { CardNDISBasic, ICardNDISBasic } from "app/components/ui/cardNDISBasic";
 import { ButtonNDIS, IButtonNDIS } from "app/components/ui/buttonNDIS";
 import { AccordionNDIS, IAccordionNDIS } from "app/components/ui/accordionNDIS";
 import { HeroBannerNDIS, IHeroBannerNDIS } from "app/components/ui/heroBannerNDIS";
+import { BreadcrumbsNDIS, IBreadcrumbsNDIS } from "app/components/ui/breadcrumbsNDIS";
 
 type Props = {
   Card: CardProps;
@@ -209,6 +210,21 @@ export const conf: UserConfig = {
         text: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance",
         buttonText: "View Digital Service Toolkit",
         variant: "white"
+      }
+    },
+
+    BreadcrumbsNDIS: {
+      render: (props) => <BreadcrumbsNDIS {...props} />,
+      fields: {
+        breadcrumbsLabels: {
+          type: 'array',
+          arrayFields: {
+            label: { type: 'text' },
+          }
+        }
+      },
+      defaultProps: {
+        breadcrumbsLabels: [{ label: 'Home' }, { label: 'Parent' }, { label: 'Parent' }, { label: 'Parent' }, { label: 'Current Page' }]
       }
     },
 
