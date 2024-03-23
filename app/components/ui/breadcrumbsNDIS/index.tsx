@@ -14,7 +14,13 @@ const BreadcrumbsNDIS = ({ breadcrumbsLabels }: IBreadcrumbsNDIS) => {
       {
         breadcrumbsLabels.map((breadcrumb, i) => (
           <Stack key={i} direction={'row'}>
-            <Typography color={'#056FD9'} fontWeight={600} sx={{ borderBottom: '2px solid #056FD9' }}>
+            <Typography
+              color={breadcrumbsLabels.length - 1 !== i ? '#056FD9' : '#22272B'}
+              fontWeight={600}
+              sx={{
+                borderBottom: breadcrumbsLabels.length - 1 !== i ? '2px solid #056FD9' : ''
+              }}
+            >
               {breadcrumb.label}
             </Typography>
             {breadcrumbsLabels.length - 1 !== i && <ChevronRight color="#056FD9" />}
