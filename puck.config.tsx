@@ -32,6 +32,7 @@ import { ButtonNDIS, IButtonNDIS } from "app/components/ui/buttonNDIS";
 import { AccordionNDIS, IAccordionNDIS } from "app/components/ui/accordionNDIS";
 import { HeroBannerNDIS, IHeroBannerNDIS } from "app/components/ui/heroBannerNDIS";
 import { BreadcrumbsNDIS, IBreadcrumbsNDIS } from "app/components/ui/breadcrumbsNDIS";
+import { FileUploadNDIS, IFileUploadNDIS } from "app/components/ui/fileUploadNDIS";
 
 type Props = {
   Card: CardProps;
@@ -50,6 +51,8 @@ type Props = {
   ButtonNDIS: IButtonNDIS
   AccordionNDIS: IAccordionNDIS
   HeroBannerNDIS: IHeroBannerNDIS
+  BreadcrumbsNDIS: IBreadcrumbsNDIS
+  FileUploadNDIS: IFileUploadNDIS
 };
 
 export type UserConfig = Config<
@@ -225,6 +228,28 @@ export const conf: UserConfig = {
       },
       defaultProps: {
         breadcrumbsLabels: [{ label: 'Home' }, { label: 'Parent' }, { label: 'Parent' }, { label: 'Parent' }, { label: 'Current Page' }]
+      }
+    },
+
+    FileUploadNDIS: {
+      render: (props) => <FileUploadNDIS {...props} />,
+      fields: {
+        title: { type: "text" },
+        text: { type: "text" },
+        buttonLabel: { type: "text" },
+        variant: {
+          type: "radio",
+          options: [
+            { value: "default", label: "Default" },
+            { value: "dragndrop", label: "dragndrop" }
+          ]
+        }
+      },
+      defaultProps: {
+        title: "Upload drivers license",
+        text: "Formats accepted: JPG, PNG or PDF File size must not exceed 350MB",
+        buttonLabel: "Select file",
+        variant: "default"
       }
     },
 
