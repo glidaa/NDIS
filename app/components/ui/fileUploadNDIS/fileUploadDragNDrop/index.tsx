@@ -18,6 +18,7 @@ const VisuallyHiddenInput = styled('input')({
 })
 
 const FileUploadNDISDragNDrop = ({ title, text, buttonLabel }: IFileUploadNDIS) => {
+  const [isDraggingOver, setIsDraggingOver] = useState(false)
   const [uploadFile, setUploadFile] = useState(null)
   const [error, setError] = useState(null)
 
@@ -56,10 +57,12 @@ const FileUploadNDISDragNDrop = ({ title, text, buttonLabel }: IFileUploadNDIS) 
 
   useEffect(() => {
     drop?.current?.addEventListener('dragover', handleDragOver)
+    drop?.current?.addEventListener('dragleave', handleDragLeave)
     drop?.current?.addEventListener('drop', handleDrop)
 
     return () => {
       drop?.current?.removeEventListener('dragover', handleDragOver)
+      drop?.current?.removeEventListener('dragleave', handleDragLeave)
       drop?.current?.removeEventListener('drop', handleDrop)
     }
   }, [])
@@ -67,17 +70,28 @@ const FileUploadNDISDragNDrop = ({ title, text, buttonLabel }: IFileUploadNDIS) 
   const handleDragOver = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    const { files } = e.dataTransfer;
+    setIsDraggingOver(true)
+    console.log('dragnover')
+    const { files } = e.dataTransfer
 
     if (files && files.length) {
       handleUploadFile(e)
     }
   }
 
+  const handleDragLeave = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    if (!drop.current.contains(e.relatedTarget)) {
+      setIsDraggingOver(false)
+    }
+  }
+
   const handleDrop = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    const { files } = e.dataTransfer;
+    setIsDraggingOver(false)
+    const { files } = e.dataTransfer
 
     if (files && files.length) {
       handleUploadFile(e)
@@ -85,7 +99,7 @@ const FileUploadNDISDragNDrop = ({ title, text, buttonLabel }: IFileUploadNDIS) 
   }
 
   return (
-    <Stack alignItems={'center'} gap={'12px'} paddingY={'28px'} ref={drop}>
+    <Stack sx={{ backgroundColor: isDraggingOver ? '#F2F2F2' : '#FFFFFF' }} alignItems={'center'} gap={'12px'} paddingY={'28px'} ref={drop}>
       <Typography fontSize={'13px'} fontWeight={400} width={'203px'}>Select a file or drag and drop here</Typography>
       <Typography fontSize={'12px'} color={'#CBCBCB'} mb={'12px'}>Must be PDF, file size no more than 10MB</Typography>
       {error && (
