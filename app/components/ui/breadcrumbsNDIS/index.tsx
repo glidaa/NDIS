@@ -2,12 +2,15 @@ import { Field } from "@measured/puck"
 import { Button, Stack, Typography } from "@mui/material"
 import { ChevronRight } from "lucide-react"
 
+interface BreadCrumbsLabels {
+  label: string
+}
+
 interface IBreadcrumbsNDIS {
-  breadcrumbsLabels: any
+  breadcrumbsLabels: BreadCrumbsLabels[]
 }
 
 const BreadcrumbsNDIS = ({ breadcrumbsLabels }: IBreadcrumbsNDIS) => {
-  console.log("🚀 ~ BreadcrumbsNDIS ~ label:", breadcrumbsLabels)
   if (!breadcrumbsLabels) return null
   return (
     <Stack direction={'row'} px={'21px'} py={'28px'}>

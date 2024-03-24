@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { HeroBannerNDIS } from '.';
 
 const meta: Meta<typeof HeroBannerNDIS> = {
-  title: "Components/UI/Cards/HeroBannerNDIS",
+  title: "Components/UI/HeroBannerNDIS",
   component: HeroBannerNDIS,
 };
 

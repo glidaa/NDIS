@@ -5,7 +5,7 @@ interface IFileUploadNDIS {
   title: string
   text: string
   buttonLabel: string
-  variant?: string
+  variant?: 'default' | 'dragndrop'
 }
 
 const FileUploadNDIS = ({ title, text, buttonLabel, variant }: IFileUploadNDIS) => {
