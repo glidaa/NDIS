@@ -36,7 +36,7 @@ const FileUploadNDISDragNDrop = ({ title, text, buttonLabel }: IFileUploadNDIS) 
       return
     }
 
-    if (file.size > 367_001_600) {
+    if (file.size > 10_485_760) {
       setError('The selected file must be smaller than 350MB')
       setUploadFile(null)
       return
