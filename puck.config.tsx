@@ -33,6 +33,7 @@ import { AccordionNDIS, IAccordionNDIS } from "app/components/ui/accordionNDIS";
 import { HeroBannerNDIS, IHeroBannerNDIS } from "app/components/ui/heroBannerNDIS";
 import { BreadcrumbsNDIS, IBreadcrumbsNDIS } from "app/components/ui/breadcrumbsNDIS";
 import { FileUploadNDIS, IFileUploadNDIS } from "app/components/ui/fileUploadNDIS";
+import { FooterNDIS, IFooterNDIS } from "app/components/ui/footerNDIS";
 
 type Props = {
   Card: CardProps;
@@ -52,7 +53,8 @@ type Props = {
   AccordionNDIS: IAccordionNDIS
   HeroBannerNDIS: IHeroBannerNDIS
   BreadcrumbsNDIS: IBreadcrumbsNDIS
-  FileUploadNDIS: IFileUploadNDIS
+  FileUploadNDIS: IFileUploadNDIS,
+  FooterNDIS: IFooterNDIS
 };
 
 export type UserConfig = Config<
@@ -250,6 +252,26 @@ export const conf: UserConfig = {
         text: "Formats accepted: JPG, PNG or PDF File size must not exceed 350MB",
         buttonLabel: "Select file",
         variant: "default"
+      }
+    },
+
+    FooterNDIS: {
+      render: (props) => <FooterNDIS {...props} />,
+      fields: {
+        footerTitle: { type: "text" },
+        footerText: { type: "text" },
+        footerLinks: {
+          type: 'array',
+          arrayFields: {
+            label: { type: 'text' },
+            link: { type: 'text' }
+          }
+        }
+      },
+      defaultProps: {
+        footerTitle: "We pay respect to the Traditional Custodians and First Peoples of NSW, and acknowledge their continued connection to their country and culture.",
+        footerText: "Copyright © 2019",
+        footerLinks: [{ label: 'Google', link: 'https://www.google.com' }, { label: 'Facebook', link: 'https://www.facebook.com' }]
       }
     },
 
