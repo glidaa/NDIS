@@ -62,6 +62,19 @@ const theme = createTheme({
           }
         }
       ]
+    },
+    MuiLink: {
+      defaultProps: {
+        color: '#FFFFFF',
+        fontSize: '12px'
+      },
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            cursor: 'pointer'
+          }
+        }
+      }
     }
   }
 });

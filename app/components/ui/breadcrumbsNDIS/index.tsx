@@ -34,4 +34,4 @@ const BreadcrumbsNDIS = ({ breadcrumbsLabels }: IBreadcrumbsNDIS) => {
   )
 }
 
-export { BreadcrumbsNDIS }
+export { BreadcrumbsNDIS, type IBreadcrumbsNDIS }
