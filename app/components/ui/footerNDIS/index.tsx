@@ -1,4 +1,4 @@
-import { Link, Stack, Typography, Container } from "@mui/material"
+import { Link, Stack, Typography, Box } from "@mui/material"
 
 interface IFooterNDIS {
   footerTitle: string,
