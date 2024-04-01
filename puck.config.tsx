@@ -34,6 +34,8 @@ import { HeroBannerNDIS, IHeroBannerNDIS } from "app/components/ui/heroBannerNDI
 import { BreadcrumbsNDIS, IBreadcrumbsNDIS } from "app/components/ui/breadcrumbsNDIS";
 import { FileUploadNDIS, IFileUploadNDIS } from "app/components/ui/fileUploadNDIS";
 import { FooterNDIS, IFooterNDIS } from "app/components/ui/footerNDIS";
+import { HeaderNDIS } from "app/components/ui/headerNDIS";
+import { DropdownNDIS } from "app/components/ui/dropdownNDIS";
 
 type Props = {
   Card: CardProps;
@@ -272,6 +274,28 @@ export const conf: UserConfig = {
         footerTitle: "We pay respect to the Traditional Custodians and First Peoples of NSW, and acknowledge their continued connection to their country and culture.",
         footerText: "Copyright © 2019",
         footerLinks: [{ label: 'Google', link: 'https://www.google.com' }, { label: 'Facebook', link: 'https://www.facebook.com' }]
+      }
+    },
+
+    HeaderNDIS: {
+      render: (props) => <HeaderNDIS {...props} />
+    },
+
+    dropdownNDIS: {
+      render: (props) => <DropdownNDIS {...props} />,
+      fields: {
+        label: { type: "text" },
+        links: {
+          type: 'array',
+          arrayFields: {
+            label: { type: 'text' },
+            link: { type: 'text' }
+          }
+        }
+      },
+      defaultProps: {
+        label: "Main nav",
+        links: [{ label: 'Google', link: 'https://www.google.com' }, { label: 'Facebook', link: 'https://www.facebook.com' }]
       }
     },
 
