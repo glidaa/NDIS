@@ -278,7 +278,54 @@ export const conf: UserConfig = {
     },
 
     HeaderNDIS: {
-      render: (props) => <HeaderNDIS {...props} />
+      render: (props) => <HeaderNDIS {...props} />,
+      fields: {
+        headerText: { type: "text" },
+        headerPhone: { type: "text" },
+        headerDropdowns: {
+          type: 'array',
+          max: 5,
+          arrayFields: {
+            label: { type: "text" },
+            links: {
+              type: "array",
+              arrayFields: {
+                label: { type: 'text' },
+                link: { type: 'text' }
+              }
+            }
+          }
+        },
+        headerAboveDropdown: {
+          type: "object",
+          objectFields: {
+            label: { type: "text" },
+            labelLink: { type: "text" },
+            link: { type: "text" }
+          },
+        },
+        button: {
+          type: "object",
+          objectFields: {
+            title: { type: "text" },
+            link: { type: "text" }
+          },
+        }
+      },
+      defaultProps: {
+        headerText: "Trusted by the public to collect information for the australian government.",
+        headerPhone: "1800 035 544",
+        headerAboveDropdown: { label: 'Portals', labelLink: 'Facebook', link: 'https://www.google.com' },
+        headerDropdowns: [
+          { label: 'For participants', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'For providers', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'For workers', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'Resources', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'About', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'Contact us', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] }
+        ],
+        button: { title: 'Talk to us', link: 'https://www.facebook.com' }
+      }
     },
 
     dropdownNDIS: {

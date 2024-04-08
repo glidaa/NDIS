@@ -12,13 +12,15 @@ const DropdownNDIS = ({ label, links }) => {
   const open = Boolean(anchorEl)
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
+
   }
   const handleClose = () => {
     setAnchorEl(null)
   }
 
-  const handleDropdownClick = () => {
+  const handleDropdownClick = (url) => {
     setAnchorEl(null)
+    window.open(url, '_blank')
   }
 
   return (
@@ -41,7 +43,7 @@ const DropdownNDIS = ({ label, links }) => {
       >
         {
           links?.map(item => (
-            <MenuItem onClick={handleDropdownClick}>{item.label}</MenuItem>
+            <MenuItem onClick={() => handleDropdownClick(item.link)}>{item.label}</MenuItem>
           ))
         }
       </Menu>
