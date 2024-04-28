@@ -3,11 +3,11 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { BottomArrowIcon } from 'app/components/icons/bottom-arrow-icon';
-import { Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 
 interface IDropdownNDIS { }
 
-const DropdownNDIS = ({ label, links }) => {
+const DropdownNDIS = ({ label, links, color, iconColor, ...props }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -24,13 +24,13 @@ const DropdownNDIS = ({ label, links }) => {
   }
 
   return (
-    <div>
+    <Stack {...props}>
       <Button
         onClick={handleClick}
         sx={{ textTransform: 'none' }}
       >
-        <Typography mr={'10px'} color={'#22272B'} fontWeight={700} fontSize={'20px'}>{label}</Typography>
-        <BottomArrowIcon fill='#056FD9' />
+        <Typography mr={'10px'} color={color ?? '#22272B'} fontWeight={700} fontSize={'20px'}>{label}</Typography>
+        <BottomArrowIcon fill={iconColor ?? '#056FD9'} />
       </Button>
       <Menu
         id="basic-menu"
@@ -47,7 +47,7 @@ const DropdownNDIS = ({ label, links }) => {
           ))
         }
       </Menu>
-    </div>
+    </Stack>
   )
 }
 

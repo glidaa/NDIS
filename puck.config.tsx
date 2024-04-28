@@ -36,26 +36,28 @@ import { FileUploadNDIS, IFileUploadNDIS } from "app/components/ui/fileUploadNDI
 import { FooterNDIS, IFooterNDIS } from "app/components/ui/footerNDIS";
 import { HeaderNDIS } from "app/components/ui/headerNDIS";
 import { DropdownNDIS } from "app/components/ui/dropdownNDIS";
+import { Header2, IHeader2} from "app/components/ui/Header2";
 
 type Props = {
-  Card: CardProps;
-  Columns: ColumnsProps;
-  Flex: FlexProps;
-  Text: TextProps;
-  VerticalSpace: VerticalSpaceProps;
+  Card: CardProps
+  Columns: ColumnsProps
+  Flex: FlexProps
+  Text: TextProps
+  VerticalSpace: VerticalSpaceProps
 
-  HeadingBlock: { title: string };
-  MastHead: {};
-  Button: ButtonProps;
-  Separator: SeparatorProps;
-  CardNDIS: ICardNDIS,
-  CardNDISBASIC: ICardNDISBasic,
-  CardNDISWithDate: ICardNDISWithDate,
+  HeadingBlock: { title: string }
+  MastHead: {}
+  Button: ButtonProps
+  Separator: SeparatorProps
+  Header2: IHeader2
+  CardNDIS: ICardNDIS
+  CardNDISBASIC: ICardNDISBasic
+  CardNDISWithDate: ICardNDISWithDate
   ButtonNDIS: IButtonNDIS
   AccordionNDIS: IAccordionNDIS
   HeroBannerNDIS: IHeroBannerNDIS
   BreadcrumbsNDIS: IBreadcrumbsNDIS
-  FileUploadNDIS: IFileUploadNDIS,
+  FileUploadNDIS: IFileUploadNDIS
   FooterNDIS: IFooterNDIS
 };
 
@@ -316,6 +318,53 @@ export const conf: UserConfig = {
         headerText: "Trusted by the public to collect information for the australian government.",
         headerPhone: "1800 035 544",
         headerAboveDropdown: { label: 'Portals', labelLink: 'Facebook', link: 'https://www.google.com' },
+        headerDropdowns: [
+          { label: 'For participants', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'For providers', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'For workers', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'Resources', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'About', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
+          { label: 'Contact us', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] }
+        ],
+        button: { title: 'Talk to us', link: 'https://www.facebook.com' }
+      }
+    },
+
+    Header2: {
+      render: (props) => <Header2 {...props} />,
+      fields: {
+        headerDropdowns: {
+          type: 'array',
+          max: 6,
+          arrayFields: {
+            label: { type: "text" },
+            links: {
+              type: "array",
+              arrayFields: {
+                label: { type: 'text' },
+                link: { type: 'text' }
+              }
+            }
+          }
+        },
+        headerAboveDropdown: {
+          type: "object",
+          objectFields: {
+            label: { type: "text" },
+            labelLink: { type: "text" },
+            link: { type: "text" }
+          },
+        },
+        button: {
+          type: "object",
+          objectFields: {
+            title: { type: "text" },
+            link: { type: "text" }
+          },
+        }
+      },
+      defaultProps: {
+        headerText: "Trusted by the public to collect information for the australian government.",
         headerDropdowns: [
           { label: 'For participants', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },
           { label: 'For providers', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] },

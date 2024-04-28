@@ -39,7 +39,11 @@ const theme = createTheme({
           style: {
             color: '#056FD9',
             border: '2px solid #056FD9',
+            backgroundColor:'#FFFFFF',
             fontWeight: 600,
+            ":hover": {
+              backgroundColor: '#FFFFFF'
+            },
             ":disabled": {
               opacity: '80%',
               color: '#056FD9'
