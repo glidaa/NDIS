@@ -36,7 +36,8 @@ import { FileUploadNDIS, IFileUploadNDIS } from "app/components/ui/fileUploadNDI
 import { FooterNDIS, IFooterNDIS } from "app/components/ui/footerNDIS";
 import { HeaderNDIS } from "app/components/ui/headerNDIS";
 import { DropdownNDIS } from "app/components/ui/dropdownNDIS";
-import { Header2, IHeader2} from "app/components/ui/Header2";
+import { Header2, IHeader2 } from "app/components/ui/Header2";
+import { Footer2 } from "app/components/ui/Footer2";
 
 type Props = {
   Card: CardProps
@@ -374,6 +375,38 @@ export const conf: UserConfig = {
           { label: 'Contact us', links: [{ label: 'Facebook Link', link: 'https://www.facebook.com' }] }
         ],
         button: { title: 'Talk to us', link: 'https://www.facebook.com' }
+      }
+    },
+
+
+    Footer2: {
+      render: (props) => <Footer2 {...props} />,
+      fields: {
+        footerLinksSectionOne: {
+          type: 'array',
+          arrayFields: {
+            label: { type: 'text' },
+            link: { type: 'text' }
+          }
+        },footerLinksSectionTwo: {
+          type: 'array',
+          arrayFields: {
+            label: { type: 'text' },
+            link: { type: 'text' }
+          }
+        },
+        footerLinksSectionThree: {
+          type: 'array',
+          arrayFields: {
+            label: { type: 'text' },
+            link: { type: 'text' }
+          }
+        }
+      },
+      defaultProps: {
+        footerLinksSectionOne: [{ label: 'Accessibility', link: 'https://www.google.com' }, { label: 'About', link: 'https://www.facebook.com' }, { label: 'Resources', link: 'https://www.google.com' }, { label: 'Media Centre', link: 'https://www.facebook.com' }, { label: 'Contact Us', link: 'https://www.facebook.com' }, { label: 'Feedback and Cumpliments', link: 'https://www.facebook.com' }, { label: 'Freedom of Information', link: 'https://www.facebook.com' }],
+        footerLinksSectionTwo: [{ label: 'Sign up to our newsletter', link: 'https://www.google.com' }],
+        footerLinksSectionThree: [{ label: 'Disclaimer', link: 'https://www.google.com' }, { label: 'Privacy', link: 'https://www.facebook.com' }, { label: 'Site by icon Agency', link: 'https://www.google.com' }]
       }
     },
 
