@@ -1,8 +1,7 @@
-import { Stack, StackTypeMap } from "@mui/material"
-import { OverridableComponent } from "@mui/material/OverridableComponent"
+import { Stack, StackProps } from "@mui/material"
 import { ReactNode } from "react"
 
-type HStackProps = OverridableComponent<StackTypeMap<{}, "div">> & {
+interface HStackProps extends StackProps {
   children?: ReactNode
 }
 
