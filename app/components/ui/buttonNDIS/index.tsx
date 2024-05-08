@@ -7,7 +7,7 @@ interface IButtonNDIS {
   'outlined-disabled' | 'blue-with-icon' | 'outlined-with-icon' |
   'blue-disabled-with-icon' | 'outlined-disabled-with-icon'
   label: string,
-  sx: SxProps
+  sx?: SxProps
 }
 
 const ButtonNDIS = ({ variant, label, ...buttonProps }: IButtonNDIS) => {

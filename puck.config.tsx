@@ -38,6 +38,7 @@ import { HeaderNDIS } from "app/components/ui/headerNDIS";
 import { DropdownNDIS } from "app/components/ui/dropdownNDIS";
 import { Header2, IHeader2 } from "app/components/ui/Header2";
 import { Footer2 } from "app/components/ui/Footer2";
+import { HeroTwo, IHeroTwo } from "app/components/ui/HeroTwo";
 
 type Props = {
   Card: CardProps
@@ -57,6 +58,7 @@ type Props = {
   ButtonNDIS: IButtonNDIS
   AccordionNDIS: IAccordionNDIS
   HeroBannerNDIS: IHeroBannerNDIS
+  HeroTwo: IHeroTwo
   BreadcrumbsNDIS: IBreadcrumbsNDIS
   FileUploadNDIS: IFileUploadNDIS
   FooterNDIS: IFooterNDIS
@@ -220,6 +222,22 @@ export const conf: UserConfig = {
         text: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance",
         buttonText: "View Digital Service Toolkit",
         variant: "white"
+      }
+    },
+
+    HeroTwo: {
+      render: (props) => <HeroTwo {...props} />,
+      fields: {
+        header: { type: "text" },
+        text1: { type: "text" },
+        text2: { type: "text" },
+        buttonText: { type: "text" }
+      },
+      defaultProps: {
+        header: "Helping you deliver great government services",
+        text1: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance",
+        text2: "Direct access to the public servants and ministers to codesign our future government",
+        buttonText: "Learn more"
       }
     },
 
