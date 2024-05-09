@@ -231,13 +231,19 @@ export const conf: UserConfig = {
         header: { type: "text" },
         text1: { type: "text" },
         text2: { type: "text" },
-        buttonText: { type: "text" }
+        button: {
+          type: "object",
+          objectFields: {
+            title: { type: "text" },
+            link: { type: "text" }
+          },
+        }
       },
       defaultProps: {
         header: "Helping you deliver great government services",
         text1: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance",
         text2: "Direct access to the public servants and ministers to codesign our future government",
-        buttonText: "Learn more"
+        button: { title: 'Learn more', link: 'https://www.facebook.com' }
       }
     },
 
