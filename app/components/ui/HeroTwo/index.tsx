@@ -1,9 +1,9 @@
 import { Stack, Typography } from "@mui/material"
 import VStack from "app/components/utility/VStack"
 import { ButtonNDIS } from "../buttonNDIS"
-import Image from "next/image"
-import handShake from '../../../assets/images/hand_shake.jpg'
 import HStack from "app/components/utility/HStack"
+import { useWindowSize } from "usehooks-ts"
+import { HandShake } from "app/assets/svg/HandShake"
 
 interface IHeroTwo {
   header: string
@@ -13,10 +13,10 @@ interface IHeroTwo {
 }
 
 const HeroTwo = ({ header, text1, text2, buttonText }: IHeroTwo) => {
-  const {heigth} = use
+  const { height = 0 } = useWindowSize()
   return (
-    <HStack pl={18} height={'100vh'}>
-      <VStack gap={'32px'}>
+    <HStack height={'100vh'} width={'100vw'}>
+      <VStack gap={'32px'} width={'45%'} alignItems={'flex-start'}>
         <Typography fontWeight={700} color={'#056FD9'} fontSize={'64px'}>
           {header}
         </Typography>
@@ -31,11 +31,8 @@ const HeroTwo = ({ header, text1, text2, buttonText }: IHeroTwo) => {
         </Stack>
       </VStack>
 
-      <Stack height={'100%'}>
-        <Image
-          src={handShake}
-          alt="Hand shake"
-        />
+      <Stack marginLeft={'10%'}>
+        <HandShake height={height} />
       </Stack>
     </HStack>
   )
