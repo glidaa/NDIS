@@ -3,7 +3,9 @@ import VStack from "app/components/utility/VStack"
 import { ButtonNDIS } from "../buttonNDIS"
 import HStack from "app/components/utility/HStack"
 import { useWindowSize } from "usehooks-ts"
-import { HandShake } from "app/assets/svg/HandShake"
+// import { HandShake } from "app/assets/svg/HandShake"
+import HandShake from '@/assets/images/hand_shake.png'
+import Image from "next/image"
 
 interface IHeroTwo {
   header: string
@@ -32,7 +34,11 @@ const HeroTwo = ({ header, text1, text2, buttonText }: IHeroTwo) => {
       </VStack>
 
       <Stack marginLeft={'10%'}>
-        <HandShake height={height} />
+        <Image
+          src={HandShake}
+          height={height}
+          alt="hand shake"
+        />
       </Stack>
     </HStack>
   )
