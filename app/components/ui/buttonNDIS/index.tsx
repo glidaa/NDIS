@@ -2,12 +2,11 @@ import { Button, ButtonProps, ButtonTypeMap, ExtendButtonBase, IconButton, SxPro
 import { UploadIcon } from 'app/components/icons/upload-icon'
 import React from 'react'
 
-interface IButtonNDIS {
+interface IButtonNDIS extends ButtonProps {
   variant: 'blue' | 'outlined' | 'blue-disabled' |
   'outlined-disabled' | 'blue-with-icon' | 'outlined-with-icon' |
   'blue-disabled-with-icon' | 'outlined-disabled-with-icon'
-  label: string,
-  sx?: SxProps
+  label: string
 }
 
 const ButtonNDIS = ({ variant, label, ...buttonProps }: IButtonNDIS) => {

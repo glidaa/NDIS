@@ -11,10 +11,13 @@ interface IHeroTwo {
   header: string
   text1: string
   text2: string
-  buttonText: string
+  button: {
+    title: string
+    link: string
+  }
 }
 
-const HeroTwo = ({ header, text1, text2, buttonText }: IHeroTwo) => {
+const HeroTwo = ({ header, text1, text2, button }: IHeroTwo) => {
   const { height = 0 } = useWindowSize()
   return (
     <HStack height={'100vh'} width={'100vw'}>
@@ -29,7 +32,7 @@ const HeroTwo = ({ header, text1, text2, buttonText }: IHeroTwo) => {
           {text2}
         </Typography>
         <Stack width={'100%'}>
-          <ButtonNDIS sx={{ width: '268px', height: '72px' }} variant="blue" label={buttonText} />
+          <ButtonNDIS sx={{ width: '268px', height: '72px' }} variant="blue" label={button.title} onClick={() => window.open(button.link)} />
         </Stack>
       </VStack>
 
