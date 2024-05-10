@@ -40,6 +40,7 @@ import { Header2, IHeader2 } from "app/components/ui/Header2";
 import { Footer2, IFooter2 } from "app/components/ui/Footer2";
 import { HeroHandShake, IHeroHandShake } from "app/components/ui/heroHandShake";
 import { HeroScreenGraphs, IHeroScreenGraphs } from "app/components/ui/heroScreenGraphs";
+import { HeroDog, IHeroDog} from "app/components/ui/heroDog";
 
 type Props = {
   Card: CardProps
@@ -64,6 +65,7 @@ type Props = {
   HeroBannerNDIS: IHeroBannerNDIS
   HeroHandShake: IHeroHandShake
   HeroScreenGraphs: IHeroScreenGraphs
+  HeroDog: IHeroDog
   BreadcrumbsNDIS: IBreadcrumbsNDIS
   FileUploadNDIS: IFileUploadNDIS
 };
@@ -285,6 +287,26 @@ export const conf: UserConfig = {
         text: "Thank you for participating in our survey! Your feedback helps us improve our services and better serve the community.",
         button1: { title: 'Take the survey', link: 'https://www.facebook.com' },
         button2: { title: 'Contribute via video', link: 'https://www.facebook.com' }
+      }
+    },
+
+    HeroDog: {
+      render: (props) => <HeroDog {...props} />,
+      fields: {
+        header: { type: "text" },
+        text: { type: "text" },
+        button: {
+          type: "object",
+          objectFields: {
+            title: { type: "text" },
+            link: { type: "text" }
+          },
+        }
+      },
+      defaultProps: {
+        header: "Helping you deliver great government services",
+        text: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance",
+        button: { title: 'View Digital Service Toolkit', link: 'https://www.facebook.com' }
       }
     },
 
