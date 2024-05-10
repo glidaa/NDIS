@@ -39,6 +39,7 @@ import { DropdownNDIS } from "app/components/ui/dropdownNDIS";
 import { Header2, IHeader2 } from "app/components/ui/Header2";
 import { Footer2 } from "app/components/ui/Footer2";
 import { HeroTwo, IHeroTwo } from "app/components/ui/HeroTwo";
+import { Hero3, IHero3 } from "app/components/ui/Hero3";
 
 type Props = {
   Card: CardProps
@@ -59,6 +60,7 @@ type Props = {
   AccordionNDIS: IAccordionNDIS
   HeroBannerNDIS: IHeroBannerNDIS
   HeroTwo: IHeroTwo
+  Hero3: IHero3
   BreadcrumbsNDIS: IBreadcrumbsNDIS
   FileUploadNDIS: IFileUploadNDIS
   FooterNDIS: IFooterNDIS
@@ -244,6 +246,34 @@ export const conf: UserConfig = {
         text1: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance",
         text2: "Direct access to the public servants and ministers to codesign our future government",
         button: { title: 'Learn more', link: 'https://www.facebook.com' }
+      }
+    },
+
+    Hero3: {
+      render: (props) => <Hero3 {...props} />,
+      fields: {
+        header: { type: "text" },
+        text: { type: "text" },
+        button1: {
+          type: "object",
+          objectFields: {
+            title: { type: "text" },
+            link: { type: "text" }
+          },
+        },
+        button2: {
+          type: "object",
+          objectFields: {
+            title: { type: "text" },
+            link: { type: "text" }
+          },
+        }
+      },
+      defaultProps: {
+        header: "Survey",
+        text: "Thank you for participating in our survey! Your feedback helps us improve our services and better serve the community.",
+        button1: { title: 'Take the survey', link: 'https://www.facebook.com' },
+        button2: { title: 'Contribute via video', link: 'https://www.facebook.com' }
       }
     },
 
