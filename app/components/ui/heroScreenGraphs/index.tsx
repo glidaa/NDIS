@@ -2,12 +2,10 @@ import { Stack, Typography } from "@mui/material"
 import VStack from "app/components/utility/VStack"
 import { ButtonNDIS } from "../buttonNDIS"
 import HStack from "app/components/utility/HStack"
-import { useWindowSize } from "usehooks-ts"
-// import { HandShake } from "app/assets/svg/HandShake"
 import ScreenGraphs from '@/assets/images/screen-graphs.png'
 import Image from "next/image"
 
-interface IHero3 {
+interface IHeroScreenGraphs {
   header: string
   text: string
   button1: {
@@ -20,11 +18,10 @@ interface IHero3 {
   }
 }
 
-const Hero3 = ({ header, text, button1, button2 }: IHero3) => {
-  const { height = 0 } = useWindowSize()
+const HeroScreenGraphs = ({ header, text, button1, button2 }: IHeroScreenGraphs) => {
   return (
-    <HStack height={'100vh'} width={'100vw'}>
-      <VStack gap={'32px'} width={'45%'} alignItems={'flex-start'}>
+    <HStack height={'100vh'} width={'100vw'} px={'7%'}>
+      <VStack gap={'32px'} width={'55%'} alignItems={'flex-start'}>
         <Typography fontWeight={700} color={'#056FD9'} fontSize={'64px'}>
           {header}
         </Typography>
@@ -32,10 +29,10 @@ const Hero3 = ({ header, text, button1, button2 }: IHero3) => {
           {text}
         </Typography>
         <Stack width={'100%'}>
-          <ButtonNDIS sx={{ width: '268px', height: '72px' }} variant="blue" label={button1.title} onClick={() => window.open(button1.link)} />
+          <ButtonNDIS sx={{ width: '268px', height: '72px', fontSize: '18px' }} variant="blue" label={button1.title} onClick={() => window.open(button1.link)} />
         </Stack>
         <Stack width={'100%'}>
-          <ButtonNDIS sx={{ width: '268px', height: '72px' }} variant="outlined" label={button2.title} onClick={() => window.open(button2.link)} />
+          <ButtonNDIS sx={{ width: '315px', height: '72px', fontSize: '18px' }} variant="outlined" label={button2.title} onClick={() => window.open(button2.link)} />
         </Stack>
       </VStack>
 
@@ -49,4 +46,4 @@ const Hero3 = ({ header, text, button1, button2 }: IHero3) => {
   )
 }
 
-export { Hero3, type IHero3 }
+export { HeroScreenGraphs, type IHeroScreenGraphs }

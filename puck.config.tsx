@@ -39,7 +39,7 @@ import { DropdownNDIS } from "app/components/ui/dropdownNDIS";
 import { Header2, IHeader2 } from "app/components/ui/Header2";
 import { Footer2 } from "app/components/ui/Footer2";
 import { HeroTwo, IHeroTwo } from "app/components/ui/HeroTwo";
-import { Hero3, IHero3 } from "app/components/ui/Hero3";
+import { HeroScreenGraphs, IHeroScreenGraphs } from "app/components/ui/heroScreenGraphs";
 
 type Props = {
   Card: CardProps
@@ -60,7 +60,7 @@ type Props = {
   AccordionNDIS: IAccordionNDIS
   HeroBannerNDIS: IHeroBannerNDIS
   HeroTwo: IHeroTwo
-  Hero3: IHero3
+  HeroScreenGraphs: IHeroScreenGraphs
   BreadcrumbsNDIS: IBreadcrumbsNDIS
   FileUploadNDIS: IFileUploadNDIS
   FooterNDIS: IFooterNDIS
@@ -249,8 +249,8 @@ export const conf: UserConfig = {
       }
     },
 
-    Hero3: {
-      render: (props) => <Hero3 {...props} />,
+    HeroScreenGraphs: {
+      render: (props) => <HeroScreenGraphs {...props} />,
       fields: {
         header: { type: "text" },
         text: { type: "text" },
