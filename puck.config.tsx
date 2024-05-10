@@ -34,10 +34,10 @@ import { HeroBannerNDIS, IHeroBannerNDIS } from "app/components/ui/heroBannerNDI
 import { BreadcrumbsNDIS, IBreadcrumbsNDIS } from "app/components/ui/breadcrumbsNDIS";
 import { FileUploadNDIS, IFileUploadNDIS } from "app/components/ui/fileUploadNDIS";
 import { FooterNDIS, IFooterNDIS } from "app/components/ui/footerNDIS";
-import { HeaderNDIS } from "app/components/ui/headerNDIS";
+import { HeaderNDIS, IHeaderNDIS } from "app/components/ui/headerNDIS";
 import { DropdownNDIS } from "app/components/ui/dropdownNDIS";
 import { Header2, IHeader2 } from "app/components/ui/Header2";
-import { Footer2 } from "app/components/ui/Footer2";
+import { Footer2, IFooter2 } from "app/components/ui/Footer2";
 import { HeroHandShake, IHeroHandShake } from "app/components/ui/heroHandShake";
 import { HeroScreenGraphs, IHeroScreenGraphs } from "app/components/ui/heroScreenGraphs";
 
@@ -49,10 +49,13 @@ type Props = {
   VerticalSpace: VerticalSpaceProps
 
   HeadingBlock: { title: string }
-  MastHead: {}
   Button: ButtonProps
   Separator: SeparatorProps
+  MastHead: {}
+  HeaderNDIS: IHeaderNDIS
   Header2: IHeader2
+  FooterNDIS: IFooterNDIS
+  Footer2: IFooter2
   CardNDIS: ICardNDIS
   CardNDISBASIC: ICardNDISBasic
   CardNDISWithDate: ICardNDISWithDate
@@ -63,13 +66,12 @@ type Props = {
   HeroScreenGraphs: IHeroScreenGraphs
   BreadcrumbsNDIS: IBreadcrumbsNDIS
   FileUploadNDIS: IFileUploadNDIS
-  FooterNDIS: IFooterNDIS
 };
 
 export type UserConfig = Config<
   Props,
   RootProps,
-  "layout" | "typography" | "interactive"
+  "layout" | "headers" | "footers" | "heros" | "typography" | "interactive"
 >;
 
 // We avoid the name config as next gets confused
@@ -80,6 +82,15 @@ export const conf: UserConfig = {
   categories: {
     layout: {
       components: ["Columns", "Flex", "VerticalSpace"],
+    },
+    headers: {
+      components: ["HeaderNDIS", "Header2", "MastHead"]
+    },
+    footers: {
+      components: ["FooterNDIS", "Footer2"]
+    },
+    heros: {
+      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs"]
     },
     typography: {
       components: ["Text"],

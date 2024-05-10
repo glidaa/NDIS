@@ -3,7 +3,13 @@ import { Facebook } from "app/components/icons/social-media/instagram"
 import { Linkedin } from "app/components/icons/social-media/linkedin"
 import { YourGovWhite } from "app/components/icons/your-gov-white"
 
-const Footer2 = ({ footerLinksSectionOne, footerLinksSectionTwo, footerLinksSectionThree }) => {
+interface IFooter2 {
+  footerLinksSectionOne: { label: string, link: string }[]
+  footerLinksSectionTwo: { label: string, link: string }[]
+  footerLinksSectionThree: { label: string, link: string }[]
+}
+
+const Footer2 = ({ footerLinksSectionOne, footerLinksSectionTwo, footerLinksSectionThree }: IFooter2) => {
   const handleClick = (url) => {
     window.open(url, '_blank')
   }
@@ -62,4 +68,4 @@ const Footer2 = ({ footerLinksSectionOne, footerLinksSectionTwo, footerLinksSect
   )
 }
 
-export { Footer2 }
+export { Footer2, type IFooter2 }
