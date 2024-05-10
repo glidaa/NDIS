@@ -7,7 +7,7 @@ import { useWindowSize } from "usehooks-ts"
 import HandShake from '@/assets/images/hand_shake.png'
 import Image from "next/image"
 
-interface IHeroTwo {
+interface IHeroHandShake {
   header: string
   text1: string
   text2: string
@@ -17,7 +17,7 @@ interface IHeroTwo {
   }
 }
 
-const HeroTwo = ({ header, text1, text2, button }: IHeroTwo) => {
+const HeroHandShake = ({ header, text1, text2, button }: IHeroHandShake) => {
   const { height = 0 } = useWindowSize()
   return (
     <HStack height={'100vh'} width={'100vw'}>
@@ -47,4 +47,4 @@ const HeroTwo = ({ header, text1, text2, button }: IHeroTwo) => {
   )
 }
 
-export { HeroTwo, type IHeroTwo }
+export { HeroHandShake, type IHeroHandShake }

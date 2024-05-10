@@ -38,7 +38,7 @@ import { HeaderNDIS } from "app/components/ui/headerNDIS";
 import { DropdownNDIS } from "app/components/ui/dropdownNDIS";
 import { Header2, IHeader2 } from "app/components/ui/Header2";
 import { Footer2 } from "app/components/ui/Footer2";
-import { HeroTwo, IHeroTwo } from "app/components/ui/HeroTwo";
+import { HeroHandShake, IHeroHandShake } from "app/components/ui/heroHandShake";
 import { HeroScreenGraphs, IHeroScreenGraphs } from "app/components/ui/heroScreenGraphs";
 
 type Props = {
@@ -59,7 +59,7 @@ type Props = {
   ButtonNDIS: IButtonNDIS
   AccordionNDIS: IAccordionNDIS
   HeroBannerNDIS: IHeroBannerNDIS
-  HeroTwo: IHeroTwo
+  HeroHandShake: IHeroHandShake
   HeroScreenGraphs: IHeroScreenGraphs
   BreadcrumbsNDIS: IBreadcrumbsNDIS
   FileUploadNDIS: IFileUploadNDIS
@@ -227,8 +227,8 @@ export const conf: UserConfig = {
       }
     },
 
-    HeroTwo: {
-      render: (props) => <HeroTwo {...props} />,
+    HeroHandShake: {
+      render: (props) => <HeroHandShake {...props} />,
       fields: {
         header: { type: "text" },
         text1: { type: "text" },
