@@ -41,6 +41,7 @@ import { Footer2, IFooter2 } from "app/components/ui/Footer2";
 import { HeroHandShake, IHeroHandShake } from "app/components/ui/heroHandShake";
 import { HeroScreenGraphs, IHeroScreenGraphs } from "app/components/ui/heroScreenGraphs";
 import { HeroDog, IHeroDog} from "app/components/ui/heroDog";
+import { HeroHowWeHelpTheGov, IHeroHowWeHelpTheGov } from "app/components/ui/heroHowWeHelpTheGov";
 
 type Props = {
   Card: CardProps
@@ -66,6 +67,7 @@ type Props = {
   HeroHandShake: IHeroHandShake
   HeroScreenGraphs: IHeroScreenGraphs
   HeroDog: IHeroDog
+  HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
   BreadcrumbsNDIS: IBreadcrumbsNDIS
   FileUploadNDIS: IFileUploadNDIS
 };
@@ -92,7 +94,7 @@ export const conf: UserConfig = {
       components: ["FooterNDIS", "Footer2"]
     },
     heros: {
-      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs"]
+      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov"]
     },
     typography: {
       components: ["Text"],
@@ -307,6 +309,18 @@ export const conf: UserConfig = {
         header: "Helping you deliver great government services",
         text: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance",
         button: { title: 'View Digital Service Toolkit', link: 'https://www.facebook.com' }
+      }
+    },
+
+    HeroHowWeHelpTheGov: {
+      render: (props) => <HeroHowWeHelpTheGov {...props} />,
+      fields: {
+        header: { type: "text" },
+        text: { type: "text" }
+      },
+      defaultProps: {
+        header: "How we help the government?",
+        text: "The culture of sharing needs to come from the top"
       }
     },
 
