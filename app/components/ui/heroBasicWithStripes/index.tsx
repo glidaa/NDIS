@@ -1,6 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material"
 import VStack from "app/components/utility/VStack"
 import HStack from "app/components/utility/HStack"
+import Image from "next/image"
+import Circles from "@/assets/images/circles.png"
 
 const HeroBasicWithStripesPuckConfig = {
   render: (props) => <HeroBasicWithStripes {...props} />,
@@ -31,6 +33,14 @@ const HeroBasicWithStripes = ({ header, text }: IHeroBasicWithStripes) => {
             {text}
           </Typography>
         </VStack>
+
+        <Stack width={'50%'} display={'flex'} alignItems={'center'}>
+          <Image
+            src={Circles}
+            height={140}
+            alt="Government word mounted with wood blocks"
+          />
+        </Stack>
       </HStack>
       <HStack>
         <Stack bgcolor={'#191919'} height={'23px'} width={'20vw'} />
