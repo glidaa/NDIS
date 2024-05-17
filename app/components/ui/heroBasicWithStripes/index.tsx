@@ -3,18 +3,7 @@ import VStack from "app/components/utility/VStack"
 import HStack from "app/components/utility/HStack"
 import Image from "next/image"
 import Circles from "@/assets/images/circles.png"
-
-const HeroBasicWithStripesPuckConfig = {
-  render: (props) => <HeroBasicWithStripes {...props} />,
-  fields: {
-    header: { type: "text" },
-    text: { type: "text" }
-  },
-  defaultProps: {
-    header: "Helping you deliver great government services",
-    text: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance"
-  }
-}
+import { ComponentConfig } from "@measured/puck"
 
 interface IHeroBasicWithStripes {
   header: string
@@ -53,4 +42,16 @@ const HeroBasicWithStripes = ({ header, text }: IHeroBasicWithStripes) => {
   )
 }
 
-export { HeroBasicWithStripes, type IHeroBasicWithStripes, HeroBasicWithStripesPuckConfig }
+const HeroBasicWithStripesPuck: ComponentConfig<IHeroBasicWithStripes> = {
+  render: (props) => <HeroBasicWithStripes {...props} />,
+  fields: {
+    header: { type: "text" },
+    text: { type: "text" }
+  },
+  defaultProps: {
+    header: "Helping you deliver great government services",
+    text: "Find the building blocks for creating user-centred digital services, as well as policy, tools and guidance"
+  }
+}
+
+export { type IHeroBasicWithStripes, HeroBasicWithStripesPuck as HeroBasicWithStripes }

@@ -43,8 +43,8 @@ import { HeroScreenGraphs, IHeroScreenGraphs } from "app/components/ui/heroScree
 import { HeroDog, IHeroDog} from "app/components/ui/heroDog";
 import { HeroHowWeHelpTheGov, IHeroHowWeHelpTheGov } from "app/components/ui/heroHowWeHelpTheGov";
 import { HeroYourVoice, IHeroYourVoice } from "app/components/ui/heroYourVoice";
-import { HeroBasicWithStripesPuckConfig } from "app/components/ui/heroBasicWithStripes"
-import { HeroBasicWithCirclesPuckConfig } from "app/components/ui/heroBasicWithCircles";
+import { HeroBasicWithStripes, IHeroBasicWithStripes } from "app/components/ui/heroBasicWithStripes"
+import { HeroBasicWithCircles, IHeroBasicWithCircles } from "app/components/ui/heroBasicWithCircles";
 
 type Props = {
   Card: CardProps
@@ -70,6 +70,8 @@ type Props = {
   HeroHandShake: IHeroHandShake
   HeroScreenGraphs: IHeroScreenGraphs
   HeroDog: IHeroDog
+  HeroBasicWithStripes: IHeroBasicWithStripes,
+  HeroBasicWithCircles: IHeroBasicWithCircles
   HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
   HeroYourVoice: IHeroYourVoice
   BreadcrumbsNDIS: IBreadcrumbsNDIS
@@ -98,7 +100,7 @@ export const conf: UserConfig = {
       components: ["FooterNDIS", "Footer2"]
     },
     heros: {
-      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov", "HeroYourVoice"]
+      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov", "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes"]
     },
     typography: {
       components: ["Text"],
@@ -338,8 +340,8 @@ export const conf: UserConfig = {
       }
     },
 
-    HeroBasicWithStripesPuckConfig,
-    HeroBasicWithCirclesPuckConfig,
+    HeroBasicWithStripes,
+    HeroBasicWithCircles,
 
     BreadcrumbsNDIS: {
       render: (props) => <BreadcrumbsNDIS {...props} />,
