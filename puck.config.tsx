@@ -42,6 +42,8 @@ import { HeroHandShake, IHeroHandShake } from "app/components/ui/heroHandShake";
 import { HeroScreenGraphs, IHeroScreenGraphs } from "app/components/ui/heroScreenGraphs";
 import { HeroDog, IHeroDog} from "app/components/ui/heroDog";
 import { HeroHowWeHelpTheGov, IHeroHowWeHelpTheGov } from "app/components/ui/heroHowWeHelpTheGov";
+import { HeroYourVoice, IHeroYourVoice } from "app/components/ui/heroYourVoice";
+import { HeroBasicWithStripesPuckConfig } from "app/components/ui/heroBasicWithStripes"
 
 type Props = {
   Card: CardProps
@@ -68,6 +70,7 @@ type Props = {
   HeroScreenGraphs: IHeroScreenGraphs
   HeroDog: IHeroDog
   HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
+  HeroYourVoice: IHeroYourVoice
   BreadcrumbsNDIS: IBreadcrumbsNDIS
   FileUploadNDIS: IFileUploadNDIS
 };
@@ -94,7 +97,7 @@ export const conf: UserConfig = {
       components: ["FooterNDIS", "Footer2"]
     },
     heros: {
-      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov"]
+      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov", "HeroYourVoice"]
     },
     typography: {
       components: ["Text"],
@@ -323,6 +326,18 @@ export const conf: UserConfig = {
         text: "The culture of sharing needs to come from the top"
       }
     },
+
+    HeroYourVoice: {
+      render: (props) => <HeroYourVoice {...props} />,
+      fields: {
+        header: { type: "text" }
+      },
+      defaultProps: {
+        header: "Remember, your voice is powerful, and combined with the voices of thousands of Australians on \"your gov\", we're redefining the future, one policy at a time."
+      }
+    },
+
+    HeroBasicWithStripesPuckConfig,
 
     BreadcrumbsNDIS: {
       render: (props) => <BreadcrumbsNDIS {...props} />,
