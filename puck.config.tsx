@@ -44,6 +44,7 @@ import { HeroDog, IHeroDog} from "app/components/ui/heroDog";
 import { HeroHowWeHelpTheGov, IHeroHowWeHelpTheGov } from "app/components/ui/heroHowWeHelpTheGov";
 import { HeroYourVoice, IHeroYourVoice } from "app/components/ui/heroYourVoice";
 import { HeroBasicWithStripesPuckConfig } from "app/components/ui/heroBasicWithStripes"
+import { HeroBasicWithCirclesPuckConfig } from "app/components/ui/heroBasicWithCircles";
 
 type Props = {
   Card: CardProps
@@ -338,6 +339,7 @@ export const conf: UserConfig = {
     },
 
     HeroBasicWithStripesPuckConfig,
+    HeroBasicWithCirclesPuckConfig,
 
     BreadcrumbsNDIS: {
       render: (props) => <BreadcrumbsNDIS {...props} />,
