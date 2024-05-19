@@ -45,6 +45,7 @@ import { HeroHowWeHelpTheGov, IHeroHowWeHelpTheGov } from "app/components/ui/her
 import { HeroYourVoice, IHeroYourVoice } from "app/components/ui/heroYourVoice";
 import { HeroBasicWithStripes, IHeroBasicWithStripes } from "app/components/ui/heroBasicWithStripes"
 import { HeroBasicWithCircles, IHeroBasicWithCircles } from "app/components/ui/heroBasicWithCircles";
+import { CustomTextFieldPuckConfig, ICustomTextField } from "app/components/ui/CustomTextField";
 
 type Props = {
   Card: CardProps
@@ -72,6 +73,7 @@ type Props = {
   HeroDog: IHeroDog
   HeroBasicWithStripes: IHeroBasicWithStripes,
   HeroBasicWithCircles: IHeroBasicWithCircles
+  TextField: ICustomTextField
   HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
   HeroYourVoice: IHeroYourVoice
   BreadcrumbsNDIS: IBreadcrumbsNDIS
@@ -81,7 +83,7 @@ type Props = {
 export type UserConfig = Config<
   Props,
   RootProps,
-  "layout" | "headers" | "footers" | "heros" | "typography" | "interactive"
+  "layout" | "headers" | "footers" | "heros" | "typography" | "textFields" | "interactive"
 >;
 
 // We avoid the name config as next gets confused
@@ -101,6 +103,9 @@ export const conf: UserConfig = {
     },
     heros: {
       components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov", "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes"]
+    },
+    textFields: {
+      components: ["TextField"]
     },
     typography: {
       components: ["Text"],
@@ -342,6 +347,7 @@ export const conf: UserConfig = {
 
     HeroBasicWithStripes,
     HeroBasicWithCircles,
+    TextField: CustomTextFieldPuckConfig,
 
     BreadcrumbsNDIS: {
       render: (props) => <BreadcrumbsNDIS {...props} />,
