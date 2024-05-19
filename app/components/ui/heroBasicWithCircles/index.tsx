@@ -48,4 +48,4 @@ const HeroBasicWithCirclesPuck: ComponentConfig<IHeroBasicWithCircles>  = {
   }
 }
 
-export { type IHeroBasicWithCircles, HeroBasicWithCirclesPuck as HeroBasicWithCircles }
+export { type IHeroBasicWithCircles, HeroBasicWithCirclesPuck as HeroBasicWithCircles, HeroBasicWithCircles as HeroBasicWithCirclesComponent }

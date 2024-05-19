@@ -54,4 +54,4 @@ const HeroBasicWithStripesPuck: ComponentConfig<IHeroBasicWithStripes> = {
   }
 }
 
-export { type IHeroBasicWithStripes, HeroBasicWithStripesPuck as HeroBasicWithStripes }
+export { type IHeroBasicWithStripes, HeroBasicWithStripesPuck as HeroBasicWithStripes, HeroBasicWithStripes as HeroBasicWithStripesComponent }

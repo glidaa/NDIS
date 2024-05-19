@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { HeroBasicWithCirclesPuckConfig, HeroBasicWithCircles } from '.';
+import { HeroBasicWithCircles, HeroBasicWithCirclesComponent } from '.';
 
-const meta: Meta<typeof HeroBasicWithCircles> = {
+const meta: Meta<typeof HeroBasicWithCirclesComponent> = {
   title: "Components/UI/Heros/HeroBasicWithCircles",
-  component: HeroBasicWithCircles,
+  component: HeroBasicWithCirclesComponent,
 };
 
 export default meta;
-type Story = StoryObj<typeof HeroBasicWithCircles>;
+type Story = StoryObj<typeof HeroBasicWithCirclesComponent>;
 
 export const Default: Story = {
-  args: HeroBasicWithCirclesPuckConfig.defaultProps
+  args: HeroBasicWithCircles.defaultProps
 };
