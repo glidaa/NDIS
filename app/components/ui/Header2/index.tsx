@@ -19,6 +19,7 @@ import { ChevronDown, ChevronUp, InboxIcon, MailIcon, Menu } from "lucide-react"
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 interface IHeader2 {
+  children: React.ReactNode,
   headerDropdowns: {
     label: string,
     links: {

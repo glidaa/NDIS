@@ -461,7 +461,10 @@ export const conf: UserConfig = {
     },
 
     Header2: {
-      render: (props) => <Header2 {...props} />,
+      render: ({ puck: { renderDropZone }, ...props }) =>
+        <Header2 {...props} >
+          {renderDropZone({ zone: "heros" })}
+        </Header2>,
       fields: {
         headerDropdowns: {
           type: 'array',
