@@ -1,5 +1,5 @@
 import { ComponentConfig } from "@measured/puck"
-import { Checkbox, FormControlLabel, FormGroup, Stack } from "@mui/material"
+import { Checkbox, FormControlLabel, FormGroup, Radio, RadioGroup, Stack } from "@mui/material"
 import { red } from "@mui/material/colors"
 import { useState } from "react"
 
@@ -8,6 +8,7 @@ interface IOptionsList {
   variant: 'checkbox' | 'radio'
 }
 const OptionsList = ({ options, variant }: IOptionsList) => {
+  // checkbox
   const optionsValues = options?.reduce((acc, option) => {
     acc[option.value] = false
     return acc
@@ -16,13 +17,20 @@ const OptionsList = ({ options, variant }: IOptionsList) => {
     ...optionsValues
   })
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setOptionList({
       ...optionList,
       [event.target.name]: event.target.checked,
     })
   }
 
+  //radio
+  const [radioValue, setRadioValue] = useState(options[0]?.value)
+  console.log("🚀 ~ OptionsList ~ radioValue:", radioValue)
+
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRadioValue((event.target as HTMLInputElement).value)
+  }
 
   return (
     <Stack px={'24px'}>
@@ -32,7 +40,7 @@ const OptionsList = ({ options, variant }: IOptionsList) => {
             <FormControlLabel
               control={
                 <Checkbox
-                  onChange={handleChange}
+                  onChange={handleCheckboxChange}
                   name={option.value}
                   sx={{
                     color: option?.color === 'red' ? red[900] : undefined,
@@ -45,6 +53,27 @@ const OptionsList = ({ options, variant }: IOptionsList) => {
             />
           ))}
         </FormGroup>
+      )}
+      {variant === 'radio' && (
+        <RadioGroup
+          name="controlled-radio-buttons-group"
+          value={radioValue}
+          onChange={handleRadioChange}
+        >
+          {options?.map(option => (
+            <FormControlLabel value={option?.value} control={
+              <Radio
+                sx={{
+                  color: option?.color === 'red' ? red[900] : undefined,
+                  '&.Mui-checked': {
+                    color: option?.color === 'red' ? red[800] : undefined,
+                  }
+                }}
+              />}
+              label={option?.label}
+            />
+          ))}
+        </RadioGroup>
       )}
     </Stack>
   )
