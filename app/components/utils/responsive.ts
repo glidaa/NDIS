@@ -1,0 +1,2 @@
+export const mdColumnReverseLgRow = { xs: 'column-reverse', sm: 'column-reverse', md: 'column-reverse', lg: 'row', xl: 'row' }
+export const mdCenterLgSpaceBetween = { xs: 'center', sm: 'center', md: 'center', lg: 'space-between', xl: 'space-between' }

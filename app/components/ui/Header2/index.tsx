@@ -99,14 +99,14 @@ const Header2 = ({ headerDropdowns }: IHeader2) => {
   return (
     <Stack>
       {width > 1200 ? (
-        <Stack display={'flex'} direction={'row'} alignItems={'center'} justifyContent={'center'} bgcolor={'#056FD9'} width={'100%'} height={'160px'} px={'5%'}>
+        <Stack display={'flex'} direction={'row'} alignItems={'center'} justifyContent={'center'} bgcolor={'#056FD9'} width={'100%'} height={'160px'} px={'2%'}>
           <YourGov />
           {
             headerDropdowns?.map((dropdown, i) => (
-              <DropdownNDIS label={dropdown.label} links={dropdown.links} color={'#FFFFFF'} iconColor={'#FFFFFF'} sx={i === 0 ? { marginLeft: '2%' } : { paddingRight: '2%' }} />
+              <DropdownNDIS label={dropdown.label} links={dropdown.links} color={'#FFFFFF'} iconColor={'#FFFFFF'} sx={i === 0 ? { marginLeft: '2%' }: null} />
             ))
           }
-          <ButtonNDIS label="Signup" variant="blue" sx={{ marginLeft: '5%' }} />
+          <ButtonNDIS label="Signup" variant="blue" sx={{ marginLeft: '3%' }} />
           <ButtonNDIS label="Login" variant="outlined" sx={{ marginLeft: '16px' }} />
         </Stack>
       ) : (

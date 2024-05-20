@@ -24,12 +24,12 @@ const DropdownNDIS = ({ label, links, color, iconColor, ...props }) => {
   }
 
   return (
-    <Stack {...props} fontSize={'8px'}>
+    <Stack {...props}>
       <Button
         onClick={handleClick}
         sx={{ textTransform: 'none' }}
       >
-        <Typography mr={'10px'} color={color ?? '#22272B'} fontWeight={700} fontSize={'1em'}>{label}</Typography>
+        <Typography mr={'10px'} color={color ?? '#22272B'} fontWeight={700} fontSize={'14px'}>{label}</Typography>
         <BottomArrowIcon fill={iconColor ?? '#056FD9'} />
       </Button>
       <Menu
