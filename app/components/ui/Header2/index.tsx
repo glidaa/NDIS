@@ -57,34 +57,41 @@ const Header2 = ({ headerDropdowns }: IHeader2) => {
     acc.push({ ...dropdown })
     return acc;
   }, [])
-  console.log("🚀 ~ menuItems ~ menuItems:", menuItems)
 
-  const [open, setOpen] = useState(true);
-  const handleClick = () => {
-    setOpen(!open);
-  };
+  const [openStates, setOpenStates] = useState({})
 
-  const list = (anchor: Anchor) => (
+  const handleClick = (index) => {
+    setOpenStates((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }))
+  }
+
+  const list = (anchor) => (
     <List
       sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
       component="nav"
     >
-      {menuItems?.map(menu => (
-        <>
-          <ListItemButton onClick={handleClick}>
+      {menuItems?.map((menu, index) => (
+        <React.Fragment key={index}>
+          <ListItemButton onClick={() => handleClick(index)}>
             <ListItemText primary={menu?.label} />
-            {open ? <ChevronDown /> : <ChevronUp />}
+            {openStates[index] ? <ChevronDown /> : <ChevronUp />}
           </ListItemButton>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={openStates[index]} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              {menu?.links.map(link => (
-                <ListItemButton sx={{ pl: 4 }}>
-                  <ListItemText primary={link?.label} onClick={() => window.open(link?.link)} />
+              {menu?.links.map((link, linkIndex) => (
+                <ListItemButton
+                  key={linkIndex}
+                  sx={{ pl: 4 }}
+                  onClick={() => window.open(link?.link)}
+                >
+                  <ListItemText primary={link?.label} />
                 </ListItemButton>
               ))}
             </List>
           </Collapse>
-        </>
+        </React.Fragment>
       ))}
     </List>
   )
