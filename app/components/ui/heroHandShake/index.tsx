@@ -18,17 +18,17 @@ interface IHeroHandShake {
 }
 
 const HeroHandShake = ({ header, text1, text2, button }: IHeroHandShake) => {
-  const { height = 0, width = 0 } = useWindowSize()
+  const { height = 0 } = useWindowSize()
   return (
-    <HStack height={'100%'} width={'100vw'} fontSize={{ md: '16px', lg: '24px', xl: '32px' }} >
-      <VStack ml={width > 900 ? '10%' : null} gap={'32px'} width={width > 900 ? '45%' : '60%'} alignItems={'flex-start'}>
-        <Typography fontWeight={700} color={'#056FD9'} fontSize={'2em'}>
+    <HStack height={'100vh'} width={'100vw'}>
+      <VStack gap={'32px'} width={'45%'} alignItems={'flex-start'}>
+        <Typography fontWeight={700} color={'#056FD9'} fontSize={'64px'}>
           {header}
         </Typography>
-        <Typography color={'#056FD9'} fontSize={'1.125em'}>
+        <Typography color={'#056FD9'} fontSize={'36px'}>
           {text1}
         </Typography>
-        <Typography color={'#056FD9'} fontSize={'1em'}>
+        <Typography color={'#056FD9'} fontSize={'32px'}>
           {text2}
         </Typography>
         <Stack width={'100%'}>
@@ -36,12 +36,11 @@ const HeroHandShake = ({ header, text1, text2, button }: IHeroHandShake) => {
         </Stack>
       </VStack>
 
-      <Stack height={'100%'} marginLeft={'10%'} sx={{ flex: 1 }}>
+      <Stack marginLeft={'10%'}>
         <Image
           src={HandShake}
-          layout="fill"
-          objectFit="contain"
-          alt="Hand Shake"
+          height={height}
+          alt="hand shake"
         />
       </Stack>
     </HStack>
