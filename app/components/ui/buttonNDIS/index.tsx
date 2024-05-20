@@ -1,12 +1,12 @@
 import { Button, ButtonProps, ButtonTypeMap, ExtendButtonBase, IconButton, SxProps } from '@mui/material'
 import { UploadIcon } from 'app/components/icons/upload-icon'
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 interface IButtonNDIS extends ButtonProps {
   variant: 'blue' | 'outlined' | 'blue-disabled' |
   'outlined-disabled' | 'blue-with-icon' | 'outlined-with-icon' |
   'blue-disabled-with-icon' | 'outlined-disabled-with-icon'
-  label: string
+  label: string | ReactElement
 }
 
 const ButtonNDIS = ({ variant, label, ...buttonProps }: IButtonNDIS) => {
