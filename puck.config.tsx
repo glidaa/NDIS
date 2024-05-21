@@ -40,13 +40,14 @@ import { Header2, IHeader2 } from "app/components/ui/Header2";
 import { Footer2, IFooter2 } from "app/components/ui/Footer2";
 import { HeroHandShake, IHeroHandShake } from "app/components/ui/heroHandShake";
 import { HeroScreenGraphs, IHeroScreenGraphs } from "app/components/ui/heroScreenGraphs";
-import { HeroDog, IHeroDog} from "app/components/ui/heroDog";
+import { HeroDog, IHeroDog } from "app/components/ui/heroDog";
 import { HeroHowWeHelpTheGov, IHeroHowWeHelpTheGov } from "app/components/ui/heroHowWeHelpTheGov";
 import { HeroYourVoice, IHeroYourVoice } from "app/components/ui/heroYourVoice";
 import { HeroBasicWithStripes, IHeroBasicWithStripes } from "app/components/ui/heroBasicWithStripes"
 import { HeroBasicWithCircles, IHeroBasicWithCircles } from "app/components/ui/heroBasicWithCircles";
 import { CustomTextFieldPuckConfig, ICustomTextField } from "app/components/ui/CustomTextField";
 import { IOptionsList, OptionsListPuckConfig } from "app/components/ui/SelectList";
+import { HeroTestimonialsPuck, iHeroTestimonials } from "app/components/ui/heroTestimonials";
 
 type Props = {
   Card: CardProps
@@ -72,8 +73,9 @@ type Props = {
   HeroHandShake: IHeroHandShake
   HeroScreenGraphs: IHeroScreenGraphs
   HeroDog: IHeroDog
-  HeroBasicWithStripes: IHeroBasicWithStripes,
+  HeroBasicWithStripes: IHeroBasicWithStripes
   HeroBasicWithCircles: IHeroBasicWithCircles
+  HeroTestimonials: iHeroTestimonials
   TextField: ICustomTextField
   OptionsList: IOptionsList
   HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
@@ -104,7 +106,7 @@ export const conf: UserConfig = {
       components: ["FooterNDIS", "Footer2"]
     },
     heros: {
-      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov", "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes"]
+      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov", "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes", "HeroTestimonials"]
     },
     inputs: {
       components: ["TextField", "OptionsList"]
@@ -349,6 +351,7 @@ export const conf: UserConfig = {
 
     HeroBasicWithStripes,
     HeroBasicWithCircles,
+    HeroTestimonials: HeroTestimonialsPuck,
     TextField: CustomTextFieldPuckConfig,
     OptionsList: OptionsListPuckConfig,
 
@@ -517,7 +520,7 @@ export const conf: UserConfig = {
             label: { type: 'text' },
             link: { type: 'text' }
           }
-        },footerLinksSectionTwo: {
+        }, footerLinksSectionTwo: {
           type: 'array',
           arrayFields: {
             label: { type: 'text' },
