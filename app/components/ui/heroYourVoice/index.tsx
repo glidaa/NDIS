@@ -13,14 +13,14 @@ interface IHeroYourVoice {
 
 const HeroYourVoice = ({ header, text }: IHeroYourVoice) => {
   return (
-    <HStack width={'100vw'} height={'100%'} bgcolor={'#056FD9'} justifyContent={'space-between'} pl={{ desktop: '10%' }} fontSize={'32px'} flexDirection={{ mobile: 'column-reverse', desktop: 'row' }}>
-      <VStack gap={'32px'} width={{ mobile: '60%', desktop: '45%' }} alignItems={'flex-start'} pr={{ desktop: '5%' }} pt={{ mobile: '5%' }}>
+    <HStack width={'100vw'} height={'100%'} bgcolor={'#056FD9'} justifyContent={'space-between'} pl={{ desktop: '10%' }} fontSize={{ desktop: '32px', mobile: '24px'}} flexDirection={{ mobile: 'column-reverse', desktop: 'row' }}>
+      <VStack gap={'32px'} width={{ mobile: '60%', desktop: '45%' }} alignItems={'flex-start'} pr={{ desktop: '5%' }} pt={{ mobile: '5%' }} pb={{ desktop: null, mobile: '5%' }}>
         <Typography fontWeight={700} color={'#FFFFFF'} fontSize={'1em'}>
           {header}
         </Typography>
       </VStack>
 
-      <Stack width={'100%'} direction="row" justifyContent={{ mobile: 'center', desktop: 'flex-end' }}>
+      <Stack width={'100%'} direction="row" justifyContent={{ mobile: 'center', desktop: 'flex-end' }} >
         <Image
           src={ManWithMic}
           sizes="100%"

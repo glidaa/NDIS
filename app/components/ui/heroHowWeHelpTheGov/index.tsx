@@ -12,24 +12,26 @@ interface IHeroHowWeHelpTheGov {
 
 const HeroHowWeHelpTheGov = ({ header, text }: IHeroHowWeHelpTheGov) => {
   return (
-      <HStack width={'100vw'} height={'500px'} bgcolor={'#056FD9'} justifyContent={'space-between'} pl={'10%'}>
-        <VStack gap={'32px'} width={'45%'} alignItems={'flex-start'}>
-          <Typography fontWeight={700} color={'#FFFFFF'} fontSize={'48px'}>
-            {header}
-          </Typography>
-          <Typography color={'#FFFFFF'} fontSize={'20px'}>
-            {text}
-          </Typography>
-        </VStack>
+    <HStack width={'100vw'} height={'500px'} bgcolor={'#056FD9'} justifyContent={'space-between'} pl={{ mobile: '0%', desktop: '10%' }} flexDirection={{ desktop: 'row', mobile: 'column-reverse' }} >
+      <VStack gap={'32px'} width={'45%'} alignItems={'flex-start'} fontSize={{ desktop: '48px', mobile: '34px' }} textAlign={{ mobile: 'center', desktop: 'start' }}>
+        <Typography fontWeight={700} color={'#FFFFFF'} fontSize={'1em'}>
+          {header}
+        </Typography>
+        <Typography color={'#FFFFFF'} fontSize={'0.6em'}>
+          {text}
+        </Typography>
+      </VStack>
 
-        <Stack>
-          <Image
-            src={GovernmentBlocks}
-            height={527}
-            alt="Government word mounted with wood blocks"
-          />
-        </Stack>
-      </HStack>
+      <Stack width={{ mobile: '100vw', desktop: null }} height={{ desktop: '100%', mobile: null }} flexGrow={1} position={'relative'} py={{ desktop: '0%', mobile: '5%' }}>
+        <Image
+          alt="Government word mounted with wood blocks"
+          src={GovernmentBlocks}
+          layout="fill"
+          objectFit="cover" // Make the image cover the entire area while maintaining aspect ratio
+          objectPosition="50% 50%" // Center the image
+        />
+      </Stack>
+    </HStack>
   )
 }
 
