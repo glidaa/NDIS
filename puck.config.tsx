@@ -48,6 +48,7 @@ import { HeroBasicWithCircles, IHeroBasicWithCircles } from "app/components/ui/h
 import { CustomTextFieldPuckConfig, ICustomTextField } from "app/components/ui/CustomTextField";
 import { IOptionsList, OptionsListPuckConfig } from "app/components/ui/SelectList";
 import { HeroTestimonialsPuck, iHeroTestimonials } from "app/components/ui/heroTestimonials";
+import { HeroWhyChooseUsPuck, IHeroWhyChooseUs } from "app/components/ui/heroWhyChooseUs";
 
 type Props = {
   Card: CardProps
@@ -76,6 +77,7 @@ type Props = {
   HeroBasicWithStripes: IHeroBasicWithStripes
   HeroBasicWithCircles: IHeroBasicWithCircles
   HeroTestimonials: iHeroTestimonials
+  HeroWhyChooseUs: IHeroWhyChooseUs
   TextField: ICustomTextField
   OptionsList: IOptionsList
   HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
@@ -106,7 +108,11 @@ export const conf: UserConfig = {
       components: ["FooterNDIS", "Footer2"]
     },
     heros: {
-      components: ["HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov", "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes", "HeroTestimonials"]
+      components: [
+        "HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov",
+        "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes", "HeroTestimonials",
+        "HeroWhyChooseUs"
+      ]
     },
     inputs: {
       components: ["TextField", "OptionsList"]
@@ -352,6 +358,7 @@ export const conf: UserConfig = {
     HeroBasicWithStripes,
     HeroBasicWithCircles,
     HeroTestimonials: HeroTestimonialsPuck,
+    HeroWhyChooseUs: HeroWhyChooseUsPuck,
     TextField: CustomTextFieldPuckConfig,
     OptionsList: OptionsListPuckConfig,
 
