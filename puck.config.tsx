@@ -51,6 +51,7 @@ import { HeroTestimonialsPuck, iHeroTestimonials } from "app/components/ui/heroT
 import { HeroWhyChooseUsPuck, IHeroWhyChooseUs } from "app/components/ui/heroWhyChooseUs";
 import { HeroCardsPuck, IHeroCards } from "app/components/ui/heroCards";
 import { HeroBridgePuck, IHeroBridge } from "app/components/ui/heroBridge";
+import { HeroLaddersPuck, IHeroLadders } from "app/components/ui/heroLadders";
 
 type Props = {
   Card: CardProps
@@ -82,6 +83,7 @@ type Props = {
   HeroWhyChooseUs: IHeroWhyChooseUs
   HeroCards: IHeroCards,
   HeroBridge: IHeroBridge,
+  HeroLadders: IHeroLadders,
   TextField: ICustomTextField
   OptionsList: IOptionsList
   HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
@@ -115,7 +117,7 @@ export const conf: UserConfig = {
       components: [
         "HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov",
         "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes", "HeroTestimonials",
-        "HeroWhyChooseUs", "HeroCards", "HeroBridge"
+        "HeroWhyChooseUs", "HeroCards", "HeroBridge", "HeroLadders"
       ]
     },
     inputs: {
@@ -367,6 +369,7 @@ export const conf: UserConfig = {
     TextField: CustomTextFieldPuckConfig,
     OptionsList: OptionsListPuckConfig,
     HeroBridge: HeroBridgePuck,
+    HeroLadders: HeroLaddersPuck,
 
     BreadcrumbsNDIS: {
       render: (props) => <BreadcrumbsNDIS {...props} />,
