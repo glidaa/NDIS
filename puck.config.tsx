@@ -50,6 +50,7 @@ import { IOptionsList, OptionsListPuckConfig } from "app/components/ui/SelectLis
 import { HeroTestimonialsPuck, iHeroTestimonials } from "app/components/ui/heroTestimonials";
 import { HeroWhyChooseUsPuck, IHeroWhyChooseUs } from "app/components/ui/heroWhyChooseUs";
 import { HeroCardsPuck, IHeroCards } from "app/components/ui/heroCards";
+import { HeroBridgePuck, IHeroBridge } from "app/components/ui/heroBridge";
 
 type Props = {
   Card: CardProps
@@ -79,7 +80,8 @@ type Props = {
   HeroBasicWithCircles: IHeroBasicWithCircles
   HeroTestimonials: iHeroTestimonials
   HeroWhyChooseUs: IHeroWhyChooseUs
-  HeroCards: IHeroCards
+  HeroCards: IHeroCards,
+  HeroBridge: IHeroBridge,
   TextField: ICustomTextField
   OptionsList: IOptionsList
   HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
@@ -113,7 +115,7 @@ export const conf: UserConfig = {
       components: [
         "HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov",
         "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes", "HeroTestimonials",
-        "HeroWhyChooseUs", "HeroCards"
+        "HeroWhyChooseUs", "HeroCards", "HeroBridge"
       ]
     },
     inputs: {
@@ -364,6 +366,7 @@ export const conf: UserConfig = {
     HeroCards: HeroCardsPuck,
     TextField: CustomTextFieldPuckConfig,
     OptionsList: OptionsListPuckConfig,
+    HeroBridge: HeroBridgePuck,
 
     BreadcrumbsNDIS: {
       render: (props) => <BreadcrumbsNDIS {...props} />,
