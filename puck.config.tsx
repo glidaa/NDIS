@@ -53,6 +53,7 @@ import { HeroCardsPuck, IHeroCards } from "app/components/ui/heroCards";
 import { HeroBridgePuck, IHeroBridge } from "app/components/ui/heroBridge";
 import { HeroLaddersPuck, IHeroLadders } from "app/components/ui/heroLadders";
 import { HeroStepsPuck, IHeroSteps } from "app/components/ui/heroSteps";
+import { HeroCardsWithImagePuck, ICardsWithImage } from "app/components/ui/heroCardsWithImage";
 
 type Props = {
   Card: CardProps
@@ -91,7 +92,8 @@ type Props = {
   HeroHowWeHelpTheGov: IHeroHowWeHelpTheGov
   HeroYourVoice: IHeroYourVoice
   BreadcrumbsNDIS: IBreadcrumbsNDIS
-  FileUploadNDIS: IFileUploadNDIS
+  FileUploadNDIS: IFileUploadNDIS,
+  HeroCardsWithImage: ICardsWithImage
 };
 
 export type UserConfig = Config<
@@ -119,7 +121,7 @@ export const conf: UserConfig = {
       components: [
         "HeroBannerNDIS", "HeroHandShake", "HeroScreenGraphs", "HeroDog", "HeroHowWeHelpTheGov",
         "HeroYourVoice", "HeroBasicWithCircles", "HeroBasicWithStripes", "HeroTestimonials",
-        "HeroWhyChooseUs", "HeroCards", "HeroBridge", "HeroLadders", "HeroSteps"
+        "HeroWhyChooseUs", "HeroCards", "HeroBridge", "HeroLadders", "HeroSteps", "HeroCardsWithImage"
       ]
     },
     inputs: {
@@ -373,6 +375,7 @@ export const conf: UserConfig = {
     HeroBridge: HeroBridgePuck,
     HeroLadders: HeroLaddersPuck,
     HeroSteps: HeroStepsPuck,
+    HeroCardsWithImage: HeroCardsWithImagePuck,
 
     BreadcrumbsNDIS: {
       render: (props) => <BreadcrumbsNDIS {...props} />,
